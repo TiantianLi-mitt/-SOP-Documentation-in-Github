@@ -19,12 +19,24 @@
 <br>
 
 ## PURPOSE OF THE DOCUMENT
-
+This guide shows the correct steps to make a new virtual machine (VM) with Red Hat Enterprise Linux 9. We use these steps so every new VM is the same. This helps our work to be good and consistent.
 ## AUDIENCE
-
+This guide is for people in the IT team, System Administrators, and the QA team. It is for anyone who needs to make a new VM for testing web applications.
 ## APPROVAL TABLE
-
+| Version | 	 Date   |                  Name                     |	  Designation    |
+|---------|-----------|-------------------------------------------|------------------|
+|   1.0   | yy-mm-dd  |	TiantianLi (tiantianli1@student.mitt.ca)	|      Author      |
+|   1.0	  | yy-mm-dd	|                                           |      Reviewer    |
+|   1.0	  | yy-mm-dd	|             	                            |      Approver    |
 ## SCOPE/OBJECTIVES
+This guide explains all the steps to set up a RHEL 10 VM for testing. The main goals are:
+
+1.To plan before we make the VM.  
+2.To set up the VM's hardware correctly.  
+3.To install the RHEL 9 operating system.  
+4.To install the web server software (LEMP).  
+5.To check that the new VM works.  
+6.To write down all the details about the VM.  
 
 ## ACCOUNTABILITY MATRIX
 
