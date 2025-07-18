@@ -1,4 +1,23 @@
-# Standard Operating Procedure for New RHEL 10 VM Setup for Web Application Testing
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div align="center">
+  <h1>Standard Operating Procedure for New RHEL 10 VM Setup for Web Application Testing</h1>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 ## PURPOSE OF THE DOCUMENT
 
 ## AUDIENCE
