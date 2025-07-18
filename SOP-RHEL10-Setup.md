@@ -95,31 +95,64 @@ On the "Installation Summary" screen, configure the following:
     - **DNS：** 8.8.8.8.
 - **Software Selection:** Choose Minimal Install as the Base Environment.
 - **User Settings:** Set a strong password for the root user and create a standard administrator user.
-#### Step 2.3:  
+#### Step 2.3: ystem Configuration and Software Installation 
 - **Connect and Register:** Log in to the server via SSH (ssh your_username@192.168.1.101). Register the system with Red Hat: 
 
-`sudo subscription-manager register --username YOUR_RHN_USERNAME --password YOUR_RHN_PASSWORD --auto-attach`  
+   `sudo subscription-manager register --username YOUR_RHN_USERNAME --password YOUR_RHN_PASSWORD --auto-attach`  
 
 - **Update System:** Run a full system update to ensure all packages are current.
 
-`sudo dnf update -y`  
+   `sudo dnf update -y`  
 
 - **Install VMware Tools:** Install the open-source version of VMware Tools for improved performance and integration.  
 
-`sudo dnf install -y open-vm-tools`
+   `sudo dnf install -y open-vm-tools`
 
    **Note:** This step is crucial for features like proper screen resolution, copy-paste, and performance monitoring within VMware Workstation.
 
-### Step 3: Installation of Guest OS and Application Stack
-#### Step 3.1: Attach Installation ISO
-#### Step 3.2: Install Guest OS
-#### Step 3.3: System Registration and Updates
-#### Step 3.4: Install LEMP Stack
-### Step 4: Post-creation Verification and Testing
+- **Install LEMP Stack:** Install the web server, database, and PHP components.
+
+   `sudo dnf install nginx mariadb-server php-fpm php-mysqlnd -y`  
+
+- **Enable and Secure Services:** Enable the services to start on boot and then secure the database.
+
+   `sudo systemctl enable --now nginx`  
+   `sudo systemctl enable --now mariadb`  
+   `sudo mysql_secure_installation`  
+
+
+
+
+### Step 4: Firewall and Final Verification
 #### Step 4.1: Configure Firewall
-#### Step 4.2: Functional Testing
-#### Step 4.3: Security Compliance
-### Step 5: Documentation of Virtual Machine
-#### Step 5.1: Document Virtual Machine Details
-#### Step 5.2: Knowledge Transfer
-## REVISION HISTORY
+Allow HTTP and HTTPS traffic through the system's firewall.  
+
+   `sudo firewall-cmd --permanent --add-service=http`  
+   `sudo firewall-cmd --permanent --add-service=https`  
+   `sudo firewall-cmd --reload`  
+
+#### Step 4.2: Test Environment
+Create a temporary test file to verify that the web server can process PHP files.  
+
+   `echo "<?php phpinfo(); ?>" | sudo tee /usr/share/nginx/html/info.php`  
+
+#### Step 4.3: Verify in Browser
+- Open a web browser and navigate to http://192.168.1.101/info.php.  
+- A successful test will display the PHP information page.  
+#### Step 4.4: Cleanup
+For security purposes, remove the test file after verification.  
+ 
+   `sudo rm /usr/share/nginx/html/info.php`  
+
+### Step 5: Documentation
+#### Step 5.1: Record Details
+Document all important details of this VM (IP address, credentials, software versions) in the company's central knowledge base.
+#### Step 5.2: Notify Team
+Inform the relevant teams that the new test environment is ready and provide them with the necessary access information.
+## Reference or Related Documents
+- Red Hat Enterprise Linux 9 Official Documentation:  
+   https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9
+- VMware Workstation Pro Documentation:  
+   https://docs.vmware.com/en/VMware-Workstation-Pro/index.html
+- Nginx Documentation:  
+   https://nginx.org/en/docs/
