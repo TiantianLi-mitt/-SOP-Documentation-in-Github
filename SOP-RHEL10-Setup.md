@@ -32,11 +32,11 @@
 | 1.0	| 2025-07-18	| TiantianLi	| Initial document creation. |
 
 **Approved Table:**  <br>
-| Role	| Name	| Signature	| Date |
-|-------|-------|-----------|------|
-|Author |	TiantianLi	|	    |2025-07-18|
-|Reviewer	|           |		  |          |
-|Approver	|           |     |          |
+| Role	  | Name	  | Signature   	  | Date       |
+|---------|---------|-----------------|------------|
+|Author   |	TiantianLi	|	            |2025-07-18  |
+|Reviewer	|             |		          |            |
+|Approver	|             |             |            |
 
 ## PURPOSE
 The purpose of this Standard Operating Procedure (SOP) is to provide clear, step-by-step instructions for setting up a Red Hat Enterprise Linux (RHEL) 10 virtual machine. This procedure ensures that all test environments are created with consistent configurations, which supports reliable application testing and reduces setup errors.
