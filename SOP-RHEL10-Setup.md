@@ -45,12 +45,12 @@ The purpose of this Standard Operating Procedure (SOP) is to provide clear, step
 This document applies to all IT personnel, including system administrators and QA engineers, who are responsible for creating testing environments. The scope covers the entire process, from initial planning and VM configuration in VMware Workstation to the installation of the operating system, deployment of the necessary software stack, and final verification. The detailed objective is to produce a fully functional RHEL 10 server ready for web application testing.
 
 ## ACCOUNTABILITY MATRIX  
-| **Task Area** |	**Responsible** | **Stockholder (Person/Team)** |
+| **Task Area** |	**Responsible** | **Review/Approval** |
 |----------------|----------------|-------------------------------|
 | Planning and Resource Assessment	| System Administrator          |
-| Virtual Machine Creation & Configuration	| IT Support / Virtualization Team|
+| Virtual Machine Creation & Configuration	| IT Support  Team|
 | OS and Application Stack Installation |	System Administrator |
-| Verification and Functional Testing |	Quality Assurance (QA) Team |
+| Verification and Functional Testing |	Quality Assurance Team |
 | Final Documentation |	Author / System Administrator |
 
 ## DEFINITIONS
