@@ -6,7 +6,10 @@
 <br>
 <br>
 <div align="center">
-  <h1>Standard Operating Procedure for New RHEL 10 VM Setup for Web Application Testing</h1>
+  <h1>Standard Operating Procedure for New VM Creation on RHEL 10</h1>
+  Manitoba Institute of Trades and Technology  <br>
+  130 Henlow Bay, Winnipeg, MB R3Y 1G4  <br>
+  2049896500  <br>
 </div>
 
 <br>
@@ -18,8 +21,8 @@
 <br>
 <br>
 
-## PURPOSE OF THE DOCUMENT
-This guide shows the correct steps to make a new virtual machine (VM) with Red Hat Enterprise Linux 9. We use these steps so every new VM is the same. This helps our work to be good and consistent.
+## PURPOSE
+This document outlines the standardized procedures for creating new virtual machines with Red Hat Enterprise Linux (RHEL) 10. Its purpose is to ensure consistency, proper configurations, and adherence to best practices during the setup of a web application testing environment.
 ## AUDIENCE
 This guide is for people in the IT team, System Administrators, and the QA team. It is for anyone who needs to make a new VM for testing web applications.
 ## APPROVAL TABLE
@@ -33,17 +36,29 @@ This guide explains all the steps to set up a RHEL 10 VM for testing. The main g
 
 1.To plan before we make the VM.  
 2.To set up the VM's hardware correctly.  
-3.To install the RHEL 9 operating system.  
+3.To install the RHEL 10 operating system.  
 4.To install the web server software (LEMP).  
 5.To check that the new VM works.  
 6.To write down all the details about the VM.  
 
 ## ACCOUNTABILITY MATRIX
-
+| Task/Steps	 | Responsible Person/Team	| Contact	| Review/Approval |
+|--------------|--------------------------|---------|-----------------|
+| Pre-creation Planning & Assessment|System Administrator	| Email/Distribution List	| IT Manager |
+|Configuration of Virtual Machine |	IT Team	| Email/Distribution List	| IT Ops Manager |
+|Installation of Guest OS & LEMP Stack	| System Administrator |	Email/Distribution List	| QA Manager |
+|Post-creation Verification & Testing	| Quality Assurance Team	| Email/Distribution List	| QA Manager |
+|Documentation of Virtual Machine	| Author (SysAdmin)	| Email/Distribution List	| Author|
 ## EXECUTION STEPS
 ### Step 1: Pre-creation Planning and Assessment
 #### Step 1.1: Identify Purpose and Requirements
+We will use this VM to test our company's web applications.
 #### Step 1.2: Define Resource Requirements
+- Define resource requirements:  
+  - **CPU:** 2 Cores  
+  - **RAM (Memory):** 2 GB  
+  - **Disk Space:** 30 GB  
+  - **Network:** Bridged Mode with a static IP address.
 ### Step 2: Configuration of Virtual Machine
 #### Step 2.1: Create a New Virtual Machine
 #### Step 2.2: Configure Virtual Machine Settings
