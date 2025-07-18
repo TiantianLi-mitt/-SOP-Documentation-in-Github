@@ -26,12 +26,12 @@
 <br>
 <br>
 
-Reversion info:  <br>
+**Reversion info:**  <br>
 | Version	| Date	| Author |	Description of Change |
 |---------|-------|--------|------------------------|
 | 1.0	| 2025-07-18	| TiantianLi	| Initial document creation. |
 
-Approved Table:  <br>
+**Approved Table:**  <br>
 | Role	| Name	| Signature	| Date |
 |-------|-------|-----------|------|
 |Author |	TiantianLi	|	    |2025-07-18|
