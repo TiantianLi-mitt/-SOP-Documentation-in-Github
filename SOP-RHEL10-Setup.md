@@ -21,6 +21,17 @@
 <br>
 <br>
 
+Reversion info:  <br>
+| Version	| Date	| Author |	Description of Change |
+|---------|-------|--------|------------------------|
+| 1.0	| 2025-07-18	| TiantianLi	| Initial document creation. |
+
+Approved Table:  <br>
+| Role	| Name	| Signature	| Date |
+|-------|-------|-----------|------|
+|Author |	TiantianLi	|	    |2025-07-18|
+|Reviewer	|           |		  |          |
+|Approver	|           |     |          |
 ## PURPOSE
 This document outlines the standardized procedures for creating new virtual machines with Red Hat Enterprise Linux (RHEL) 10. Its purpose is to ensure consistency, proper configurations, and adherence to best practices during the setup of a web application testing environment.
 ## AUDIENCE
