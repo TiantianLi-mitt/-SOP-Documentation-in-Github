@@ -37,35 +37,31 @@ Approved Table:  <br>
 |Author |	TiantianLi	|	    |2025-07-18|
 |Reviewer	|           |		  |          |
 |Approver	|           |     |          |
+
 ## PURPOSE
-This document outlines the standardized procedures for creating new virtual machines with Red Hat Enterprise Linux (RHEL) 10. Its purpose is to ensure consistency, proper configurations, and adherence to best practices during the setup of a web application testing environment.
-## AUDIENCE
-This guide is for people in the IT team, System Administrators, and the QA team. It is for anyone who needs to make a new VM for testing web applications.
-## APPROVAL TABLE
-| Version | 	 Date   |                  Name                     |	  Designation    |
-|---------|-----------|-------------------------------------------|------------------|
-|   1.0   | yy-mm-dd  |	TiantianLi (tiantianli1@student.mitt.ca)	|      Author      |
-|   1.0	  | yy-mm-dd	|                                           |      Reviewer    |
-|   1.0	  | yy-mm-dd	|             	                            |      Approver    |
-## SCOPE/OBJECTIVES
-This guide explains all the steps to set up a RHEL 10 VM for testing. The main goals are:
+The purpose of this Standard Operating Procedure (SOP) is to provide clear, step-by-step instructions for setting up a Red Hat Enterprise Linux (RHEL) 10 virtual machine. This procedure ensures that all test environments are created with consistent configurations, which supports reliable application testing and reduces setup errors.
 
-1.To plan before we make the VM.  
-2.To set up the VM's hardware correctly.  
-3.To install the RHEL 10 operating system.  
-4.To install the web server software (LEMP).  
-5.To check that the new VM works.  
-6.To write down all the details about the VM.  
+## SCOPE
+This document applies to all IT personnel, including system administrators and QA engineers, who are responsible for creating testing environments. The scope covers the entire process, from initial planning and VM configuration to the installation of the operating system, deployment of the necessary software stack, and final verification. The detailed objectives to be achieved through this SOP are: a fully functional RHEL 10 server with a LEMP stack, configured with basic security measures, and ready for web application deployment.
 
-## ACCOUNTABILITY MATRIX
-| Task/Steps	 | Responsible Person/Team	| Contact	| Review/Approval |
-|--------------|--------------------------|---------|-----------------|
-| Pre-creation Planning & Assessment|System Administrator	| Email/Distribution List	| IT Manager |
-|Configuration of Virtual Machine |	IT Team	| Email/Distribution List	| IT Ops Manager |
-|Installation of Guest OS & LEMP Stack	| System Administrator |	Email/Distribution List	| QA Manager |
-|Post-creation Verification & Testing	| Quality Assurance Team	| Email/Distribution List	| QA Manager |
-|Documentation of Virtual Machine	| Author (SysAdmin)	| Email/Distribution List	| Author|
-## EXECUTION STEPS
+## ACCOUNTABILITY MATRIX  
+| **Task Area** |	**Responsible** | **Stockholder (Person/Team)** |
+|----------------|----------------|-------------------------------|
+| Planning and Resource Assessment	| System Administrator          |
+| Virtual Machine Creation & Configuration	| IT Support / Virtualization Team|
+| OS and Application Stack Installation |	System Administrator |
+| Verification and Functional Testing |	Quality Assurance (QA) Team |
+| Final Documentation |	Author / System Administrator |
+
+## DEFINITIONS
+- **SOP:** Standard Operating Procedure. A document that provides step-by-step instructions to help workers carry out complex routine operations.  
+- **VM:** Virtual Machine. A software-based computer that runs on a physical host server.  
+- **RHEL:** Red Hat Enterprise Linux. A popular, enterprise-grade Linux operating system.  
+- **LEMP:** An acronym for a popular software stack used for web development, consisting of Linux, Nginx (Engine-X), MySQL/MariaDB, and PHP.  
+- **SSH:** Secure Shell. A network protocol used for secure remote login and command execution on a server.   
+
+## PROCEDURE STEPS
+The following steps describe the complete procedure for creating and configuring the RHEL 9 virtual machine. Any known difficulties are mentioned within the relevant steps.
 ### Step 1: Pre-creation Planning and Assessment
 #### Step 1.1: Identify Purpose and Requirements
 We will use this VM to test our company's web applications.
