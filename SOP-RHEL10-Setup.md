@@ -42,7 +42,7 @@ Approved Table:  <br>
 The purpose of this Standard Operating Procedure (SOP) is to provide clear, step-by-step instructions for setting up a Red Hat Enterprise Linux (RHEL) 10 virtual machine. This procedure ensures that all test environments are created with consistent configurations, which supports reliable application testing and reduces setup errors.
 
 ## SCOPE
-This document applies to all IT personnel, including system administrators and QA engineers, who are responsible for creating testing environments. The scope covers the entire process, from initial planning and VM configuration to the installation of the operating system, deployment of the necessary software stack, and final verification. The detailed objectives to be achieved through this SOP are: a fully functional RHEL 10 server with a LEMP stack, configured with basic security measures, and ready for web application deployment.
+This document applies to all IT personnel, including system administrators and QA engineers, who are responsible for creating testing environments. The scope covers the entire process, from initial planning and VM configuration in VMware Workstation to the installation of the operating system, deployment of the necessary software stack, and final verification. The detailed objective is to produce a fully functional RHEL 10 server ready for web application testing.
 
 ## ACCOUNTABILITY MATRIX  
 | **Task Area** |	**Responsible** | **Stockholder (Person/Team)** |
@@ -56,24 +56,60 @@ This document applies to all IT personnel, including system administrators and Q
 ## DEFINITIONS
 - **SOP:** Standard Operating Procedure. A document that provides step-by-step instructions to help workers carry out complex routine operations.  
 - **VM:** Virtual Machine. A software-based computer that runs on a physical host server.  
-- **RHEL:** Red Hat Enterprise Linux. A popular, enterprise-grade Linux operating system.  
+- **RHEL:** Red Hat Enterprise Linux. A popular, enterprise-grade Linux operating system.
+- **VMware Workstation:** A desktop hypervisor application that allows users to run multiple operating systems as virtual machines on a single physical computer.
 - **LEMP:** An acronym for a popular software stack used for web development, consisting of Linux, Nginx (Engine-X), MySQL/MariaDB, and PHP.  
-- **SSH:** Secure Shell. A network protocol used for secure remote login and command execution on a server.   
+- **VMware Tools:** A suite of utilities that enhances the performance and management of a virtual machine.   
 
 ## PROCEDURE STEPS
-The following steps describe the complete procedure for creating and configuring the RHEL 9 virtual machine. Any known difficulties are mentioned within the relevant steps.
-### Step 1: Pre-creation Planning and Assessment
-#### Step 1.1: Identify Purpose and Requirements
-We will use this VM to test our company's web applications.
-#### Step 1.2: Define Resource Requirements
-- Define resource requirements:  
-  - **CPU:** 2 Cores  
-  - **RAM (Memory):** 2 GB  
+The following steps describe the complete procedure for creating and configuring the RHEL 10 virtual machine using VMware Workstation.
+### Step 1: Planning and VM Creation in VMware Workstation
+#### Step 1.1: Plan Resources  
+Before starting, confirm the VM requirements:
+  - **CPU:** 2 vCPUs  
+  - **RAM:** 2 GB  
   - **Disk Space:** 30 GB  
-  - **Network:** Bridged Mode with a static IP address.
-### Step 2: Configuration of Virtual Machine
-#### Step 2.1: Create a New Virtual Machine
-#### Step 2.2: Configure Virtual Machine Settings
+  - Ensure a Red Hat subscription is available for system registration.
+#### Step 1.2: Create New VM
+Launch VMware Workstation and start the "New Virtual Machine" wizard. Select "Custom (advanced)" for more control.  
+#### Step 1.3: Configure VM:  
+Proceed through the wizard with the following settings:  
+- **Guest Operating System:** Select Linux, and for the version, choose Red Hat Enterprise Linux 9 (64-bit).
+- **Virtual Machine Name:** rhel9-webapp-test.
+- **Processor Configuration:** Assign 2 processors.
+- **Memory:** Assign 2048 MB (2 GB).
+- **Network Type:** Select Use bridged networking.
+- **Disk:** Create a new virtual disk and allocate 30 GB of space. Store it as a single file for better performance.
+#### Step 1.4:Attach ISO:  
+Before finishing the wizard or in the VM settings afterward, configure the virtual CD/DVD drive to use the rhel-10.x-x86_64-dvd.iso image file.
+
+### Step 2: RHEL 10 Operating System Installation
+#### Step 2.1: Start Installation
+Power on the newly created virtual machine to boot from the ISO image.
+#### Step 2.2: Configure Installation
+On the "Installation Summary" screen, configure the following:  
+- **Network & Host Name:** Enable the network adapter. Configure：  
+    - **IPv4 address：** 192.168.1.101  
+    - **netmask：** 255.255.255.0  
+    - **gateway：** 192.168.1.1
+    - **DNS：** 8.8.8.8.
+- **Software Selection:** Choose Minimal Install as the Base Environment.
+- **User Settings:** Set a strong password for the root user and create a standard administrator user.
+#### Step 2.3:  
+- **Connect and Register:** Log in to the server via SSH (ssh your_username@192.168.1.101). Register the system with Red Hat: 
+
+`sudo subscription-manager register --username YOUR_RHN_USERNAME --password YOUR_RHN_PASSWORD --auto-attach`  
+
+- **Update System:** Run a full system update to ensure all packages are current.
+
+`sudo dnf update -y`  
+
+- **Install VMware Tools:** Install the open-source version of VMware Tools for improved performance and integration.  
+
+`sudo dnf install -y open-vm-tools`
+
+   **Note:** This step is crucial for features like proper screen resolution, copy-paste, and performance monitoring within VMware Workstation.
+
 ### Step 3: Installation of Guest OS and Application Stack
 #### Step 3.1: Attach Installation ISO
 #### Step 3.2: Install Guest OS
